@@ -1,0 +1,52 @@
+<!-- views/add-product.ejs -->
+
+
+<div class="card border-0 rounded-4 ">
+    <div class="card-body p-5">
+
+        <!-- Title styled like main page -->
+        <h2 class="text-center mb-4 fw-bold bg-dark text-white py-2 rounded">
+            ➕ Add New Product
+        </h2>
+
+        <% if (errorMessage) { %>
+            <div class="alert alert-danger text-center rounded-3" role="alert">
+                <%= errorMessage %>
+            </div>
+            <% } %>
+
+                <form action="/" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="name" class="form-label fw-semibold">Product Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter product name"
+                            required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="desc" class="form-label fw-semibold">Product Description</label>
+                        <textarea class="form-control" id="desc" name="desc" rows="3"
+                            placeholder="Enter product description" required></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="price" class="form-label fw-semibold">Price</label>
+                        <input type="number" class="form-control" id="price" name="price" step="0.01"
+                            placeholder="Enter product price" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="imageUrl" class="form-label fw-semibold">Product Image</label>
+                        <input type="file" class="form-control" id="imageUrl" name="imageUrl" accept="image/*" required>
+                        <small class="text-muted">Upload a product image (jpg, png, etc.)</small>
+                    </div>
+
+                    <!-- Clean button -->
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-success rounded">
+                            Add Product
+                        </button>
+                    </div>
+                </form>
+
+    </div>
+</div>
